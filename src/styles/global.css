@@ -164,8 +164,7 @@ header h1 {
 }
 
 /* image fills card width, keeps aspect ratio */
-.card img,
-.card .card-image {
+.card img {
     width: 100%;
     height: auto;
     display: block;
