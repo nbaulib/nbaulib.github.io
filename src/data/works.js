@@ -53,7 +53,7 @@ const all = [
         title: "music hand",
         link: "https://greengrl.stream/hands/",
         link2: "https://editor.p5js.org/nbaulib/sketches/93ukP-M-L",
-        imgPath: "/src/assets/sungrl-8.avif",
+        imgPath: "/src/assets/hands.avif",
         alt: "p5.js sketch: Music hand",
         tags: ["p5.js", "music", "web"],
     },
