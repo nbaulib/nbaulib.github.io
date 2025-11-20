@@ -28,7 +28,7 @@ const isAnimated = imagePath.endsWith(".avif");
       isAnimated ? (
         <img src={imagePath} alt={altText} loading="lazy" />
       ) : (
-        <Image src={images[imagePath]()} alt={altText} format="avif" />
+        <Image src={images[imagePath]()} alt={altText} format="avif" loading="lazy"/>
       )
     }
     <p>{title}</p>

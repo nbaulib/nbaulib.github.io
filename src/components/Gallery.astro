@@ -10,8 +10,8 @@ const { tag } = Astro.props;
 
 // Filter if tag prop is given, otherwise show everything
 const filtered = tag ? all.filter((item) => item.tags.includes(tag)) : all;
-
 ---
+
 <section class="gallery" aria-label="Gallery">
   {
     filtered.map((item) => (
