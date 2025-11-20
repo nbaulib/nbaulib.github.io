@@ -11,22 +11,15 @@ const { tag } = Astro.props;
 // Filter if tag prop is given, otherwise show everything
 const filtered = tag ? all.filter((item) => item.tags.includes(tag)) : all;
 
-const items = filtered.map((item) => ({
-  imagePath: item.imgPath,
-  altText: item.alt,
-  title: item.title,
-  href: item.link,
-}));
 ---
-
 <section class="gallery" aria-label="Gallery">
   {
-    items.map((item, i) => (
+    filtered.map((item) => (
       <GalleryCard
-        imagePath={item.imagePath}
-        altText={item.altText}
+        imagePath={item.imgPath}
+        altText={item.alt}
         title={item.title}
-        href={item.href}
+        href={item.link}
       />
     ))
   }
