@@ -11,6 +11,6 @@
   "dependencies": {
     "@fontsource/stack-sans-notch": "^5.2.1",
     "@fontsource/stack-sans-text": "^5.2.1",
-    "astro": "^5.15.5"
+    "astro": "^5.16.6"
   }
 }
