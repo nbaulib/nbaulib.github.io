@@ -11,13 +11,15 @@ html {
     background-color: #f8fdef;
     font-family: 'Stack Sans Text', system-ui, sans-serif;
     font-weight: 300;
-    /* font-family: 'Stack Sans Notch', sans-serif; */
+    font-synthesis: none;
+    font-size: 18px;
 }
 
 
 body {
     margin: 0;
-    padding: .5rem;
+    /* padding: .5rem 2rem; */
+    padding: 0;
     color: #172203;
 }
 
@@ -47,6 +49,11 @@ h1 {
     display: block;
 }
 
+/***  ***/
+.page-container {
+    padding: 0px 24px;
+}
+
 /*** BUTTON LINKS ***/
 
 .nav-links {
@@ -70,33 +77,33 @@ h1 {
 
 /* @media screen and (max-width: 636px) { */
 
-    /* .social-links,
+/* .social-links,
     .menu {
         display: none;
     } */
 
-    .text-card {
-        --shadow: 12px;
-        border: 6px solid #172203;
-        box-shadow: var(--shadow) var(--shadow) 0 #172203;
-        padding: 1.2rem;
-        margin: 1rem 3rem calc(1rem + var(--shadow)) 3rem;
-        transition: transform 0.3s, box-shadow 0.3s;
+.text-card {
+    --shadow: 12px;
+    border: 6px solid #172203;
+    box-shadow: var(--shadow) var(--shadow) 0 #172203;
+    padding: 1.2rem;
+    margin: 1rem 3rem calc(1rem + var(--shadow)) 3rem;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.text-card:hover {
+    transform: translate(5px, 5px);
+    box-shadow: 7px 7px 0 #172203;
+}
+
+@media screen and (max-width: 636px) {
+    .gallery {
+        columns: 3 200px;
+        column-gap: 1.1rem;
     }
 
-    .text-card:hover {
-        transform: translate(5px, 5px);
-        box-shadow: 7px 7px 0 #172203;
+    .card img {
+        width: 100%;
+        height: auto;
     }
-
-    @media screen and (max-width: 636px) {
-        .gallery {
-            columns: 3 200px;
-            column-gap: 1.1rem;
-        }
-
-        .card img {
-            width: 100%;
-            height: auto;
-        }
-    }
+}
