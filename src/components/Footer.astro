@@ -3,49 +3,38 @@
 ---
 
 <footer>
-    <div class="footer-left">
-        <img class="footer-img" src="https://placehold.co/200.png" />
+    <p class="big">Nico Bautista-Libreros</p>
 
-        <div class="">
-            <ul class="socials">
-                <a href="https://www.linkedin.com/in/nicobaulib" target="_blank"
-                    >LinkedIn</a
-                >
-                <a href="https://github.com/nbaulib" target="_blank">GitHub</a>
-            </ul>
-        </div>
-        <p class="footer-meta">
-            Made with <a href="https://astro.build" target="_blank">Astro</a>
-        </p>
-    </div>
+    <ul class="socials">
+        <li>
+            <a href="https://github.com/nbaulib" aria-label="GitHub" target="_blank">
+                <img src="src/assets/github.svg" alt="" />
+            </a>
+        </li>
+        <li>
+            <a
+                href="https://www.linkedin.com/in/nicobaulib"
+                aria-label="LinkedIn" target="_blank"
+            >
+                <img src="src/assets/linkedin.svg" alt="" />
+            </a>
+        </li>
+    </ul>
 
-    <div class="footer-right">
-        <!-- <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-            eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
-            ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-            aliquip ex ea commodo consequat. Duis aute irure dolor in
-            reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
-            pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
-            culpa qui officia deserunt mollit anim id est laborum.
-        </p> -->
-        <p>Nico Bautista-Libreros</p>
-        <!-- <p>Nico Bautista-Libreros</p> -->
-        <!-- <p>Nico Bautista-Libreros</p> -->
-    </div>
+    <p class="footer-meta">
+        Made with <a href="https://astro.build" target="_blank">Astro</a>
+    </p>
 </footer>
 
 <style>
     footer {
         display: flex;
-        justify-content: space-between;
-        align-items: center;
+        width: 100%;
 
         padding: 2rem;
-        background-color: black;
+        background-color: #000000;
         color: #f8fdef;
-
-        /* gap: 1rem; */
+        flex-direction: column;
     }
 
     footer a {
@@ -58,23 +47,41 @@
         margin: 0;
         display: flex;
         gap: 1rem;
+        justify-content: center;
+        
+    }
+    /*  */
+    .socials img {
+        width: 38px;
+        height: 38px;
+        display: block;
+
+        filter: invert(1); /* makes black SVGs white */
+        transition: opacity 0.15s ease;
     }
 
-    .footer-right p {
-        font-family: 'Stack Sans Notch', system-ui, sans-serif;
-        font-size: 80px;
-        padding: 0;
+    .socials a:hover img {
+        opacity: 0.8;
+    }
+
+    .big {
+        font-family: "Stack Sans Notch", system-ui, sans-serif;
+        font-size: 90px;
+        padding: 27px 0px 42px 0px;
         margin: 0rem;
         font-weight: 900;
         line-height: 2rem;
 
+        text-align: center;
+
         color: #ffffff;
         text-shadow:
-            -0px 10px 0px #a7a6a6,
-            -0px 20px 0px #747373;
+            -0px 15px 0px #a7a6a6,
+            -0px 30px 0px #747373;
     }
 
     .footer-meta {
         font-size: 0.9rem;
+        text-align: center;
     }
 </style>
