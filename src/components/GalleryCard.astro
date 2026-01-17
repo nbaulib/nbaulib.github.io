@@ -7,9 +7,29 @@ interface Props {
   altText: string;
   title: string;
   href: string;
+  date?: string;
 }
 
-const { imagePath, altText, title, href } = Astro.props;
+const { imagePath, altText, title, href, date } = Astro.props;
+
+// Format the date
+const formatDate = (dateStr?: string) => {
+  if (!dateStr) return null;
+
+  // Parse MM-DD-YYYY format
+  const [month, day, year] = dateStr.split("-");
+  const dateObj = new Date(parseInt(year), parseInt(month) - 1, parseInt(day));
+
+  // Format as you like:
+  return dateObj.toLocaleDateString("en-US", {
+    year: "numeric",
+    month: "short",
+    day: "numeric",
+  });
+  // Output: "Apr 4, 2025"
+};
+
+const formattedDate = formatDate(date);
 
 const images = import.meta.glob<{ default: ImageMetadata }>(
   "/src/assets/**/*.{jpeg,jpg,png,gif,avif}",
@@ -23,14 +43,48 @@ const isAnimated = imagePath.endsWith(".avif");
 ---
 
 <div class="card">
-  <a href={href} class="button">
+  <a href={href} class="button" target="_blank">
     {
       isAnimated ? (
         <img src={imagePath} alt={altText} loading="lazy" />
       ) : (
-        <Image src={images[imagePath]()} alt={altText} format="avif" loading="lazy"/>
+        <Image
+          src={images[imagePath]()}
+          alt={altText}
+          format="avif"
+          loading="lazy"
+        />
       )
     }
-    <p>{title}</p>
+    <div class="card-info">
+      <!-- {formattedDate && <p class="date">{formattedDate}</p>} -->
+      <p>{formattedDate}</p>
+      <h3>{title}</h3>
+    </div>
   </a>
 </div>
+
+<style>
+  .card {
+    margin: 0 0 24px 0;
+  }
+  .card a {
+    text-decoration: none;
+    color: black;
+    text-transform: capitalize;
+  }
+
+  .card-info {
+    padding: 4px 0;
+  }
+
+  .card-info p, .card-info h3{
+    padding: 0;
+    margin: 0;
+    
+  }
+  .card-info p {
+    color: rgb(74, 74, 74);
+    font-size: 0.9rem;
+  }
+</style>
