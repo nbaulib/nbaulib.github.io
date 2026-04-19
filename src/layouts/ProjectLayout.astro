@@ -1,0 +1,97 @@
+---
+import Nav from "../components/Nav.astro";
+import Footer from "../components/Footer.astro";
+import ImageBlock from "../components/ImageBlock.astro";
+import "../styles/global.css";
+
+interface Frontmatter {
+  title: string;
+  timeline: string;
+  role: string;
+  collaborators: string[];
+  tools: string[];
+}
+
+const { title, timeline, role, collaborators, tools } = Astro.props as Frontmatter;
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <title>{title} — Nico</title>
+  </head>
+  <body>
+    <Nav />
+
+    <main>
+
+      <a href="/">back</a>
+
+      <h1>{title}</h1>
+      <div class="meta">
+        <div class="col">
+          <p>Timeline</p>
+          <p>{timeline}</p>
+        </div>
+        <div class="col">
+          <p>Role</p>
+          <p>{role}</p>
+        </div>
+        <div class="col">
+          <p>Collaborators</p>
+          <ul>
+            {collaborators.map((person) => <li>{person}</li>)}
+          </ul>
+        </div>
+        <div class="col">
+          <p>Tools</p>
+          <ul>
+            {tools.map((tool) => <li>{tool}</li>)}
+          </ul>
+        </div>
+      </div>
+
+      <slot />
+    </main>
+
+    <Footer />
+    <script>
+      // import "../scripts/menu.js";
+    </script>
+  </body>
+</html>
+
+<style>
+  main {
+    padding-bottom: 24px;
+  }
+  .meta {
+    display: flex;
+    color: #555;
+    font-size: 0.9rem;
+    margin: 0.25rem 0;
+    gap: 2rem; /* optional spacing between columns */
+  }
+
+  .col {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .col p {
+    margin: 0;
+  }
+
+  .col ul {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+  }
+
+  .col li {
+    margin: 0;
+  }
+</style>

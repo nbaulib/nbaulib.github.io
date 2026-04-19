@@ -1,0 +1,44 @@
+---
+import Nav from "../components/Nav.astro";
+import Footer from "../components/Footer.astro";
+import "../styles/global.css";
+
+const { frontmatter } = Astro.props;
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <title>{frontmatter.title} — Nico Bautista-Libreros</title>
+  </head>
+  <body>
+    <Nav />
+
+    <main>
+      <h1>{frontmatter.title}</h1>
+      {frontmatter.author && <p class="meta">By {frontmatter.author}</p>}
+      {frontmatter.date && <p class="meta">Written on: {frontmatter.date}</p>}
+
+      <slot />
+    </main>
+
+    <Footer />
+    <script>
+      import "../scripts/menu.js";
+    </script>
+  </body>
+</html>
+
+<style>
+  main {
+    padding-bottom: 24px;
+  }
+  .meta {
+    color: #555;
+    font-size: 0.9rem;
+    margin: 0.25rem 0;
+  }
+</style>
