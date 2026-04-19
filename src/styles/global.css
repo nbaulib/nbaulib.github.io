@@ -1,109 +1,93 @@
-@import '@fontsource/stack-sans-notch';
-/* @import '@fontsource/stack-sans-text'; */
-@import '@fontsource/stack-sans-text/300.css';
-@import '@fontsource/stack-sans-text/400.css';
+@import url('https://fonts.googleapis.com/css2?family=Stack+Sans+Headline:wght@200..700&family=Stack+Sans+Notch:wght@200..700&family=Stack+Sans+Text:wght@200..700&display=swap');
+
+:root {
+    --nav-width: 220px;
+
+    --light: #f8fdef;
+
+    /* green black */
+    /* --dark: #172203; */
+    --nav-accent: #33FFFF;
+    /* --nav-accent: #35FF69; */
+
+    --dark: #252627;
+    /* --dark: #2D2D2A; */
+        /* yellow */
+        /* --nav-accent: #FFBA08;  */
+        /* purple */
+        /* --nav-accent: #E2A0FF; */
+        /* --nav-accent: #998DA0; */
+        /* --nav-accent: #AA78A6; */
+        /* red */
+        /* --nav-accent: #F55D3E; */
+        /* green dark */
+        /* --nav-accent: #6B8F71; */
+        /* grey blue */
+        /* --nav-accent: #7389AE; */
+        /* green bright */
+        /* --nav-accent: #3BC14A; */
+        /* orange */
+        /* --nav-accent: #FF8552; */
+        /* --nav-accent: #F05D23; */
+        /* birght blue */
+        /* --nav-accent: #42CAFD; */
+
+
+        /* --dark: #2E1F27; */
+        /* --nav-accent: #688E26; */
+
+}
 
 * {
     box-sizing: border-box;
 }
 
 html {
-    background-color: #f8fdef;
+    background-color: var(--dark);
     font-family: 'Stack Sans Text', system-ui, sans-serif;
     font-weight: 300;
-    font-synthesis: none;
     font-size: 18px;
+    width: 100%;
+    height: 100%;
 }
-
 
 body {
     margin: 0;
-    /* padding: .5rem 2rem; */
     padding: 0;
-    color: #172203;
+    background-color: var(--light);
+    color: var(--dark);
 }
 
-/*** HEADER ***/
-header {
-    text-align: center;
-    line-height: 1;
-}
-
-header a {
-    color: black;
-    text-decoration: none;
-}
+/* TEXT */
 
 h1 {
-    margin: 0;
-    margin-top: 1rem;
-    font-size: 2.8rem;
+    font-size: 2.5rem;
+    letter-spacing: -0.04em;
     font-family: 'Stack Sans Notch', system-ui, sans-serif;
 }
 
-/* .first-name{
-        font-size: 3rem;
-    } */
-
-.last-name {
-    display: block;
+h2,
+b {
+    font-family: "Stack Sans Notch", sans-serif;
+    font-weight: 500;
 }
 
-/***  ***/
-.page-container {
+h3 {
+     font-family: "Stack Sans Headline", sans-serif;
+    font-weight: 400;
+}
+
+
+main {
     padding: 0px 24px;
 }
 
-/*** BUTTON LINKS ***/
-
-.nav-links {
-    margin: 2rem;
-}
-
-.nav-links a {
-    --shadow: 5px;
-    display: inline-block;
-    border: 2.5px solid #172203;
-    box-shadow: var(--shadow) var(--shadow) 0 #172203;
-    padding: var(--shadow) 20px;
-    margin: 0px 10px;
-    transition: transform 0.2s, box-shadow 0.2s;
-}
-
-.nav-links a:hover {
-    transform: translate(3px, 3px);
-    box-shadow: 2px 2px 0 #172203;
-}
-
-/* @media screen and (max-width: 636px) { */
-
-/* .social-links,
-    .menu {
-        display: none;
-    } */
-
-.text-card {
-    --shadow: 12px;
-    border: 6px solid #172203;
-    box-shadow: var(--shadow) var(--shadow) 0 #172203;
-    padding: 1.2rem;
-    margin: 1rem 3rem calc(1rem + var(--shadow)) 3rem;
-    transition: transform 0.3s, box-shadow 0.3s;
-}
-
-.text-card:hover {
-    transform: translate(5px, 5px);
-    box-shadow: 7px 7px 0 #172203;
-}
-
-@media screen and (max-width: 636px) {
-    .gallery {
-        columns: 3 200px;
-        column-gap: 1.1rem;
+@media (min-width: 900px) {
+    html {
+        background-color: var(--light);
     }
 
-    .card img {
-        width: 100%;
-        height: auto;
+    main {
+        margin-left: var(--nav-width, 260px);
     }
 }

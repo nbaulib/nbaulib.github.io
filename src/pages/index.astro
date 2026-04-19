@@ -1,12 +1,85 @@
 ---
-// import Header from "../components/Header.astro";
+// pages/index.astro
 import Layout from "../layouts/Layout.astro";
 import Gallery from "../components/Gallery.astro";
-import TextCard from "../components/textCard.astro";
+
+import { getCollection } from "astro:content";
+
+const projects = await getCollection("projects");
 ---
 
 <Layout>
-	<TextCard />
-	<TextCard />
-	<Gallery />
+	<div class="bio">
+		<p>
+			Nico is a New York based <b>interactive designer</b> focused on <span
+				class="ani">web 🌐, product 📦, and UX 🧭</span
+			> design. He is studying
+			<b>Computer Science</b> and <b>Media Studies</b> at Hunter College and
+			will graduate in December 2026.
+		</p>
+	</div>
+
+	<div class="works">
+		{
+			projects.map((p) => (
+				<a href={`/${p.id}`}>
+					<h2>{p.data.title}</h2>
+					<p>{p.data.timeline}</p>
+				</a>
+			))
+		}
+	</div>
+
+	<!-- <div class="works">
+		<div class="cat">
+			<h2>UX</h2>
+			<Gallery tag="projects" />
+		</div>
+
+		<div class="cat">
+			<h2>Web</h2>
+			<Gallery tag="web" />
+		</div>
+
+		<div class="cat">
+			<h2>Graphic Design</h2>
+			<Gallery tag="instagram" />
+		</div>
+	</div> -->
+
+	<!-- <div class="works"></div> -->
 </Layout>
+
+<style>
+	.bio p {
+		line-height: 1.5rem;
+	}
+	.bio b {
+		font-family: "Stack Sans Headline", system-ui, sans-serif;
+	}
+
+	.works {
+		display: flex;
+		flex-wrap: wrap;
+		gap: 30px;
+		margin: 0 auto;
+	}
+
+	.cat {
+		width: calc(33vw - 41px);
+		flex: 1 1 calc(25% - 20px);
+		box-sizing: border-box;
+		/* background-color: #ffffff; */
+		/* border: 1px solid #ddd; */
+	}
+
+	@media (min-width: 900px) {
+		.bio {
+			display: none;
+		}
+
+		.cat {
+			/* width: calc(calc(100vw - (260px + 200px))/3); */
+		}
+	}
+</style>

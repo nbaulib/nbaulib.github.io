@@ -1,5 +1,4 @@
 ---
-import Header from "../components/Header.astro";
 import Nav from "../components/Nav.astro";
 import Footer from "../components/Footer.astro";
 import "../styles/global.css";
@@ -12,41 +11,19 @@ import "../styles/global.css";
 		<meta name="viewport" content="width=device-width" />
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 		<meta name="generator" content={Astro.generator} />
-		<link
-			rel="preload"
-			href="/node_modules/@fontsource/stack-sans-text/files/stack-sans-text-latin-400-normal.woff2"
-			as="font"
-			type="font/woff2"
-			crossorigin
-		/>
-		<link
-			rel="preload"
-			href="/node_modules/@fontsource/stack-sans-notch/files/stack-sans-notch-latin-400-normal.woff2"
-			as="font"
-			type="font/woff2"
-			crossorigin
-		/>
 		<title>Nico Bautista-Libreros</title>
 	</head>
 	<body>
 		<Nav />
 
-		<div class="page-container">
+		<main>
 			<slot />
-		</div>
+		</main>
 
 		<Footer />
-		<script>
-			import "../scripts/menu.js";
-		</script>
 	</body>
 </html>
 
 <style>
-	html,
-	body {
-		margin: 0;
-		width: 100%;
-		height: 100%;
-	}
+
 </style>

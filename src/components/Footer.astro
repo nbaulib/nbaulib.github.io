@@ -3,18 +3,37 @@
 ---
 
 <footer>
-    <p class="big">Nico Bautista-Libreros</p>
+    <!-- <p class="big">Nico Bautista-Libreros</p> -->
+    <div class="brand">
+        <p>
+            <span class="first-name">NiCO</span>
+            <br />
+            <span class="last-name">BAUTiSTA-LiBREROS</span>
+        </p>
+    </div>
+
+    <pre
+        class="bio-ascii">
+        _
+       (c).-.
+hi  .-" , _( )____)
+        </pre>
 
     <ul class="socials">
         <li>
-            <a href="https://github.com/nbaulib" aria-label="GitHub" target="_blank">
+            <a
+                href="https://github.com/nbaulib"
+                aria-label="GitHub"
+                target="_blank"
+            >
                 <img src="src/assets/github.svg" alt="" />
             </a>
         </li>
         <li>
             <a
                 href="https://www.linkedin.com/in/nicobaulib"
-                aria-label="LinkedIn" target="_blank"
+                aria-label="LinkedIn"
+                target="_blank"
             >
                 <img src="src/assets/linkedin.svg" alt="" />
             </a>
@@ -32,13 +51,38 @@
         width: 100%;
 
         padding: 2rem;
-        background-color: #000000;
-        color: #f8fdef;
+        background-color: var(--dark);
+        color: var(--light);
         flex-direction: column;
     }
 
     footer a {
-        color: #f8fdef;
+        color: var(--light);
+    }
+
+    .brand p {
+        font-family: "Stack Sans Notch", system-ui, sans-serif;
+        font-weight: 500;
+        letter-spacing: -0.01em;
+        font-size: 1.25rem;
+        line-height: 0;
+    }
+
+    span.first-name {
+        font-weight: 600;
+        font-size: 4rem;
+    }
+
+    span.last-name {
+        font-weight: 600;
+        font-size: 1rem;
+        line-height: 2.5rem;
+    }
+
+    .bio-ascii {
+        /* font-family: monospace; */
+        font-size: 0.85rem;
+        /* line-height: 1; */
     }
 
     .socials {
@@ -46,9 +90,8 @@
         padding: 0;
         margin: 0;
         display: flex;
-        gap: 1rem;
-        justify-content: center;
-        
+        gap: 0.5rem;
+        /* justify-content: center; */
     }
     /*  */
     .socials img {
@@ -64,24 +107,14 @@
         opacity: 0.8;
     }
 
-    .big {
-        font-family: "Stack Sans Notch", system-ui, sans-serif;
-        font-size: 90px;
-        padding: 27px 0px 42px 0px;
-        margin: 0rem;
-        font-weight: 900;
-        line-height: 2rem;
-
-        text-align: center;
-
-        color: #ffffff;
-        text-shadow:
-            -0px 15px 0px #a7a6a6,
-            -0px 30px 0px #747373;
-    }
-
     .footer-meta {
         font-size: 0.9rem;
-        text-align: center;
+        /* text-align: center; */
+    }
+
+    @media (min-width: 900px) {
+        footer {
+            display: none;
+        }
     }
 </style>

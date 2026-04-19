@@ -2,59 +2,210 @@
 
 ---
 
-<div class="menu-overlay">
-    <!-- <div id="main-menu" class="nav-links">
-        <a href="/design">Design</a>
-        <a href="/web">Web</a>
-        <a href="/teaching">Teaching</a>
-    </div> -->
-    <!-- <div class="social-links">
-        <a href="/">LinkedIn</a>
-        <a href="/">GitHub</a>
-    </div> -->
-    <!-- <div id="main-menu" class="nav-links">
-        <a href="/design">Works</a>
-        <a href="/teaching">Teaching</a>
-    </div> -->
-</div>
-
 <div class="nav">
-    <div class="logo-area">
-        <a href="index.html">
-            <div class="brand-text">Nico Bautista-Libreros</div>
-        </a>
+    <div class="brand">
+        <!-- <a href="/">Nico Bautista-Libreros</a> -->
+        <a href="/"
+            ><span class="first-name">NiCO</span>
+            <span class="last-name">BAUTiSTA-LiBREROS</span></a
+        >
     </div>
 
-    <div class="nav-link-area">
-        <a href="/design">Works</a>
+    <nav class="links">
+        <a href="/">Works</a>
         <a href="/teaching">Teaching</a>
+    </nav>
+
+    <div class="bio">
+        <p>An <b>interactive designer</b> focused on:</p>
+        <ul>
+            <li>UX 🧭</li>
+            <li>web 🌐</li>
+            <li>product 📦</li>
+        </ul>
+        <p>
+            Hunter College<br />
+            CS + Media Studies<br />
+            Dec 2026
+        </p>
+
+        <pre
+            class="bio-ascii">
+        _
+       (c).-.
+hi  .-" , _( )____)
+        </pre>
     </div>
+
+    <ul class="socials">
+        <li>
+            <a href="https://github.com/nbaulib" target="_blank">
+                <img src="/src/assets/github.svg" alt="GitHub" />
+            </a>
+        </li>
+        <li>
+            <a href="https://www.linkedin.com/in/nicobaulib" target="_blank">
+                <img src="/src/assets/linkedin.svg" alt="LinkedIn" />
+            </a>
+        </li>
+    </ul>
 </div>
 
 <style>
+    /*** ***/
+    :root {
+        --nav-width: 220px;
+    }
+
+    /*** ***/
     .nav {
         display: flex;
         justify-content: space-between;
-        background-color: black;
-        padding: 7px 24px;
+        align-items: center;
+        padding: 10px 24px;
+        background: var(--dark);
+
+        /* All text inside the nav inherits the light colour */
+        color: var(--light);
     }
 
-    .brand-text {
-        font-weight: 400;
+    /*** Logo Area - Brand ***/
+
+    .brand a {
+        font-family: "Stack Sans Notch", system-ui, sans-serif;
+        font-weight: 500;
+        letter-spacing: -0.01em;
+        font-size: 1.25rem;
     }
 
-    .nav-link-area {
+    /*** Horizontal links (mobile) ***/
+    .links {
         display: flex;
         gap: 20px;
     }
 
+    /*** Bio + socials hidden on mobile ***/
+    .bio,
+    .socials {
+        display: none;
+    }
+
+    /* ── Global link styles ─────────────────────────────────── */
     a {
-        color: #f8fdef;
+        color: var(--light);
         text-decoration: none;
+        transition: color 0.15s ease;
     }
 
     a:hover {
-        color: aqua;
+        color: var(--nav-accent);
     }
 
+    /*** Desktop: vertical sidebar ***/
+    @media (min-width: 900px) {
+        .nav {
+            position: fixed;
+            left: 0;
+            top: 0;
+
+            width: var(--nav-width);
+            height: 100vh;
+
+            flex-direction: column;
+            align-items: flex-start;
+            justify-content: flex-start;
+
+            padding: 32px 24px;
+            gap: 32px;
+
+            /* Keep the sidebar on top of page content */
+            z-index: 100;
+        }
+
+        /* bigger name logo */
+        .brand {
+            padding: 2rem 0px 0px 0px;
+        }
+
+        .brand a {
+            line-height: 0;
+        }
+
+        span.first-name {
+            font-weight: 600;
+            font-size: 4rem;
+        }
+
+        span.last-name {
+            font-weight: 600;
+            font-size: 1rem;
+        }
+
+        /* socials */
+        .links {
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .bio {
+            display: block;
+            /* font-size: 0.875rem; */
+            font-size: 0.85rem;
+            line-height: 1.6;
+            color: color-mix(in srgb, var(--light) 85%, transparent);
+            /* colour now inherited from .nav; no extra rule needed */
+            /* opacity: 0.85; */
+        }
+
+        .bio b {
+            opacity: 1;
+            color: color-mix(in srgb, var(--light) 95%, transparent);
+        }
+
+        .bio p {
+            line-height: -1px;
+        }
+
+        .bio ul {
+            list-style-type: square;
+        }
+
+        .bio-ascii {
+            /* font-family: monospace; */
+            /* font-size: 0.7rem; */
+            line-height: 1;
+        }
+
+        .socials {
+            display: flex;
+            gap: 12px;
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            margin-top: auto; /* push to the bottom of the sidebar */
+        }
+
+        .socials img {
+            width: 20px;
+            /* Make SVG icons visible on dark background */
+            filter: invert(1);
+            opacity: 0.75;
+            transition: opacity 0.15s ease;
+        }
+
+        .socials a:hover img {
+            opacity: 1;
+        }
+    }
+</style>
+
+<!--
+    is:global to reach the page's <main> from this sidebar component.
+-->
+<style is:global>
+    /* @media (min-width: 900px) {
+        main {
+            margin-left: var(--nav-width, 260px);
+        }
+    } */
 </style>
