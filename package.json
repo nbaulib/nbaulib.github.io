@@ -9,8 +9,9 @@
     "astro": "astro"
   },
   "dependencies": {
+    "@astrojs/mdx": "^5.0.3",
     "@fontsource/stack-sans-notch": "^5.2.1",
     "@fontsource/stack-sans-text": "^5.2.1",
-    "astro": "^5.16.11"
+    "astro": "^6.1.6"
   }
 }
