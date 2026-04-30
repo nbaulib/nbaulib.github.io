@@ -1,6 +1,7 @@
 ---
 import ProjectLayout from "../layouts/ProjectLayout.astro";
-import ImageBlock from "../components/ImageBlock.astro";
+// import ImageBlock from "../components/ImageBlock.astro";
+import MdxLink from "../components/MdxLink.astro";
 
 import { getCollection, render } from 'astro:content';
 
@@ -19,7 +20,7 @@ const { Content } = await render(post);
 ---
 
 <ProjectLayout {...post.data}>
-  <Content components={{ ImageBlock }} />
+   <Content components={{ a: MdxLink }} />
 </ProjectLayout>
 
 
