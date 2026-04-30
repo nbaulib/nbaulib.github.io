@@ -1,7 +1,6 @@
 ---
 import Nav from "../components/Nav.astro";
 import Footer from "../components/Footer.astro";
-import ImageBlock from "../components/ImageBlock.astro";
 import "../styles/global.css";
 
 interface Frontmatter {
@@ -10,9 +9,11 @@ interface Frontmatter {
   role: string;
   collaborators: string[];
   tools: string[];
+  thumbnail: string;
 }
 
-const { title, timeline, role, collaborators, tools } = Astro.props as Frontmatter;
+const { title, timeline, role, collaborators, tools} =
+  Astro.props as Frontmatter;
 ---
 
 <!doctype html>
@@ -27,13 +28,12 @@ const { title, timeline, role, collaborators, tools } = Astro.props as Frontmatt
     <Nav />
 
     <main>
-
-      <a href="/">back</a>
+      <a href="/">Back</a>
 
       <h1>{title}</h1>
       <div class="meta">
         <div class="col">
-          <p>Timeline</p>
+          <p>Timeframe</p>
           <p>{timeline}</p>
         </div>
         <div class="col">
@@ -53,45 +53,97 @@ const { title, timeline, role, collaborators, tools } = Astro.props as Frontmatt
           </ul>
         </div>
       </div>
-
       <slot />
     </main>
 
     <Footer />
-    <script>
-      // import "../scripts/menu.js";
-    </script>
   </body>
 </html>
 
 <style>
   main {
-    padding-bottom: 24px;
+    font-family:
+      ui-sans-serif,
+      system-ui,
+      -apple-system,
+      Segoe UI,
+      Roboto,
+      Helvetica,
+      Arial;
+    color: var(--dark);
   }
+
+  h1 {
+    font-size: 2.4rem;
+    line-height: 1.1;
+    letter-spacing: -0.02em;
+    margin: 16px 0 24px;
+    /* font-weight: 700; */
+  }
+
   .meta {
-    display: flex;
-    color: #555;
-    font-size: 0.9rem;
-    margin: 0.25rem 0;
-    gap: 2rem; /* optional spacing between columns */
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 24px;
+    /* font-size: 0.85rem; */
+    color: #666;
+    /* margin-bottom: 40px; */
   }
 
-  .col {
-    display: flex;
-    flex-direction: column;
+  /* col header */
+  .col p:first-child {
+    font-weight: 600;
+    color: #333;
+    margin-bottom: 6px;
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
   }
 
-  .col p {
-    margin: 0;
+  /* content below header :D */
+  .col p:not(:first-child),
+  .col li {
+    font-size: 0.85rem;
+    line-height: 1.4;
+    color: #666;
   }
 
+  /* remove bullets */
   .col ul {
     padding: 0;
     margin: 0;
     list-style: none;
   }
 
-  .col li {
-    margin: 0;
+  main :global(li) {
+    padding: 0.2rem;
+  }
+
+  /* mdx body styling */
+  main :global(p) {
+    font-size: 1.05rem;
+    line-height: 1.75;
+    margin: 0 0 1.2rem;
+  }
+
+  main :global(h2) {
+    margin-top: 2.5rem;
+    margin-bottom: 1rem;
+    font-size: 1.4rem;
+    letter-spacing: -0.01em;
+  }
+
+  @media (min-width: 1100px) {
+    main {
+      padding: 48px 120px 64px;
+    }
+  }
+
+  /* responsive meta layout */
+  @media (max-width: 1100px) {
+    .meta {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 16px;
+    }
   }
 </style>

@@ -18,6 +18,7 @@ const { frontmatter } = Astro.props;
     <Nav />
 
     <main>
+      <a href="/">Back</a>
       <h1>{frontmatter.title}</h1>
       {frontmatter.author && <p class="meta">By {frontmatter.author}</p>}
       {frontmatter.date && <p class="meta">Written on: {frontmatter.date}</p>}
@@ -26,15 +27,20 @@ const { frontmatter } = Astro.props;
     </main>
 
     <Footer />
-    <script>
-      import "../scripts/menu.js";
-    </script>
   </body>
 </html>
 
 <style>
   main {
     padding-bottom: 24px;
+    font-family:
+      ui-sans-serif,
+      system-ui,
+      -apple-system,
+      Segoe UI,
+      Roboto,
+      Helvetica,
+      Arial;
   }
   .meta {
     color: #555;
