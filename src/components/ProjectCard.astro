@@ -1,11 +1,14 @@
 ---
 const { project } = Astro.props;
 
-const thumbnail = project.data.thumbnail ?? "https://placehold.co/1600x800.png";
+// const thumbnail = project.data.thumbnail ?? "https://placehold.co/1600x800.png";
+const thumbnail = project.data.thumbnail;
+import { Image } from "astro:assets";
 ---
 
 <a class="card" href={`/${project.id}`}>
-  <img src={thumbnail} alt={project.data.title} />
+  <!-- <Image src={thumbnail} alt={project.data.title} /> -->
+   <Image src={thumbnail} alt={project.data.title} />
 
   <div class="content">
     <p class="bold">{project.data.timeline}</p>
@@ -31,6 +34,13 @@ const thumbnail = project.data.thumbnail ?? "https://placehold.co/1600x800.png";
       Helvetica,
       Arial; */
   }
+
+  .card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
 
   h2,
   p {
