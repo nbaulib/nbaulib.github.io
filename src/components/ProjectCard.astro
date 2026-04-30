@@ -1,0 +1,73 @@
+---
+const { project } = Astro.props;
+
+const thumbnail = project.data.thumbnail ?? "https://placehold.co/1600x800.png";
+---
+
+<a class="card" href={`/${project.id}`}>
+  <img src={thumbnail} alt={project.data.title} />
+
+  <div class="content">
+    <p class="bold">{project.data.timeline}</p>
+    <h2>{project.data.title}</h2>
+    <p>{project.data.desc}</p>
+  </div>
+</a>
+
+<style>
+  .card {
+    display: flex;
+    flex-direction: column;
+    text-decoration: none;
+    gap: 10px;
+    transition: transform 0.1s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+
+    /* font-family:
+      ui-sans-serif,
+      system-ui,
+      -apple-system,
+      Segoe UI,
+      Roboto,
+      Helvetica,
+      Arial; */
+  }
+
+  h2,
+  p {
+    padding: 0;
+    margin: 0;
+  }
+
+  img {
+    width: 100%;
+  }
+
+  img {
+    width: 100%;
+    display: block;
+    transform-origin: center;
+  }
+
+  a {
+    color: var(--dark);
+  }
+
+  p {
+    font-size: 0.85rem;
+    line-height: 1.4;
+    color: #666;
+  }
+
+  .bold {
+    font-weight: 600;
+    color: #333;
+    /* margin: 6px; */
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+  }
+
+  .card:hover {
+    transform: scale(0.99);
+  }
+</style>
