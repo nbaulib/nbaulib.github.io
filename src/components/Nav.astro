@@ -4,37 +4,39 @@
 
 <div class="nav">
     <div class="brand">
-        <!-- <a href="/">Nico Bautista-Libreros</a> -->
-        <a href="/"
-            ><span class="first-name">NiCO</span>
-            <span class="last-name">BAUTiSTA-LiBREROS</span></a
-        >
+        <a href="/">
+            <span class="first-name">NiCO</span>
+            <span class="last-name">BAUTiSTA-LiBREROS</span>
+            <span class="last-name-small">BL</span>
+        </a>
     </div>
 
-    <nav class="links">
+    <nav class="nav-links">
         <a href="/">Works</a>
         <a href="/teaching">Teaching</a>
     </nav>
 
     <div class="bio">
-        <p>An <b>interactive designer</b> focused on:</p>
-        <ul>
-            <li>UX 🧭</li>
-            <li>web 🌐</li>
-            <li>product 📦</li>
-        </ul>
+        <div>
+            <p>An <b>interactive designer</b> focused on:</p>
+            <ul>
+                <li>UX 🧭</li>
+                <li>web 🌐</li>
+                <li>product 📦</li>
+            </ul>
+        </div>
         <p>
             Hunter College<br />
             CS + Media Studies<br />
             Dec 2026
         </p>
 
-        <pre
+        <!-- <pre
             class="bio-ascii">
         _
        (c).-.
 hi  .-" , _( )____)
-        </pre>
+        </pre> -->
     </div>
 
     <ul class="socials">
@@ -44,7 +46,7 @@ hi  .-" , _( )____)
             </a>
         </li>
         <li>
-            <a href="https://www.linkedin.com/in/nicobaulib" target="_blank">
+            <a href="https://www.linkedin.com/in/nbaulib" target="_blank">
                 <img src="/src/assets/linkedin.svg" alt="LinkedIn" />
             </a>
         </li>
@@ -79,7 +81,7 @@ hi  .-" , _( )____)
     }
 
     /*** Horizontal links (mobile) ***/
-    .links {
+    .nav-links {
         display: flex;
         gap: 20px;
     }
@@ -90,19 +92,21 @@ hi  .-" , _( )____)
         display: none;
     }
 
-    /* ── Global link styles ─────────────────────────────────── */
-    a {
-        color: var(--light);
-        text-decoration: none;
-        transition: color 0.15s ease;
+    /* smaller last name on mobile */
+    .last-name-small {
+        display: none;
     }
-
-    a:hover {
-        color: var(--nav-accent);
+    @media (max-width: 490px) {
+        .last-name {
+            display: none;
+        }
+        .last-name-small {
+            display: inline;
+        }
     }
 
     /*** Desktop: vertical sidebar ***/
-    @media (min-width: 900px) {
+    @media (min-width: 950px) {
         .nav {
             position: fixed;
             left: 0;
@@ -141,20 +145,19 @@ hi  .-" , _( )____)
             font-size: 1rem;
         }
 
-        /* socials */
-        .links {
+        .nav-links {
             flex-direction: column;
             gap: 12px;
+            font-size: 1.1rem;
+            font-weight: 400;
         }
 
         .bio {
-            display: block;
-            /* font-size: 0.875rem; */
+            display: flex;
+            flex-direction: column;
             font-size: 0.85rem;
-            line-height: 1.6;
+            line-height: 1.6em;
             color: color-mix(in srgb, var(--light) 85%, transparent);
-            /* colour now inherited from .nav; no extra rule needed */
-            /* opacity: 0.85; */
         }
 
         .bio b {
@@ -163,7 +166,7 @@ hi  .-" , _( )____)
         }
 
         .bio p {
-            line-height: -1px;
+            /* line-height: 1.4em; */
         }
 
         .bio ul {
@@ -171,9 +174,10 @@ hi  .-" , _( )____)
         }
 
         .bio-ascii {
-            /* font-family: monospace; */
-            /* font-size: 0.7rem; */
+            font-size: 0.5rem;
             line-height: 1;
+            margin: 0;
+            /* display: none; */
         }
 
         .socials {
@@ -182,30 +186,29 @@ hi  .-" , _( )____)
             list-style: none;
             padding: 0;
             margin: 0;
-            margin-top: auto; /* push to the bottom of the sidebar */
+            margin-top: auto;
+            /* push to the bottom of the sidebar */
         }
 
+        .socials li {
+            display: flex;
+            align-items: center;
+        }
+
+        /* ccan i make it cyan on hover? */
         .socials img {
-            width: 20px;
-            /* Make SVG icons visible on dark background */
+            display: flex;
+            width: 21px;
             filter: invert(1);
             opacity: 0.75;
-            transition: opacity 0.15s ease;
+            transition:
+                filter 0.15s ease,
+                opacity 0.15s ease;
         }
 
         .socials a:hover img {
             opacity: 1;
+            filter: invert(1) sepia(1) saturate(10000%) hue-rotate(155deg);
         }
     }
-</style>
-
-<!--
-    is:global to reach the page's <main> from this sidebar component.
--->
-<style is:global>
-    /* @media (min-width: 900px) {
-        main {
-            margin-left: var(--nav-width, 260px);
-        }
-    } */
 </style>
