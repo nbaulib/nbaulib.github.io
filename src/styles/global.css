@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Stack+Sans+Headline:wght@200..700&family=Stack+Sans+Notch:wght@200..700&family=Stack+Sans+Text:wght@200..700&display=swap');
 
 :root {
-    --nav-width: 220px;
+    /* --nav-width: 220px; */
 
     --light: #f8fdef;
 
@@ -12,29 +12,30 @@
 
     --dark: #252627;
     /* --dark: #2D2D2A; */
-        /* yellow */
-        /* --nav-accent: #FFBA08;  */
-        /* purple */
-        /* --nav-accent: #E2A0FF; */
-        /* --nav-accent: #998DA0; */
-        /* --nav-accent: #AA78A6; */
-        /* red */
-        /* --nav-accent: #F55D3E; */
-        /* green dark */
-        /* --nav-accent: #6B8F71; */
-        /* grey blue */
-        /* --nav-accent: #7389AE; */
-        /* green bright */
-        /* --nav-accent: #3BC14A; */
-        /* orange */
-        /* --nav-accent: #FF8552; */
-        /* --nav-accent: #F05D23; */
-        /* birght blue */
-        /* --nav-accent: #42CAFD; */
+    /* yellow */
+    /* --nav-accent: #FFBA08;  */
+    /* purple */
+    /* --nav-accent: #E2A0FF; */
+    /* --nav-accent: #998DA0; */
+    /* --nav-accent: #AA78A6; */
+    /* red */
+    /* --nav-accent: #F55D3E; */
+    /* green dark */
+    /* --nav-accent: #6B8F71; */
+    /* grey blue */
+    /* --nav-accent: #7389AE; */
+    /* green bright */
+    /* --nav-accent: #3BC14A; */
+    /* orange */
+    /* --nav-accent: #FF8552; */
+    /* --nav-accent: #F05D23; */
+    /* birght blue */
+    /* --nav-accent: #42CAFD; */
 
 
-        /* --dark: #2E1F27; */
-        /* --nav-accent: #688E26; */
+    /* --dark: #2E1F27; */
+    /* --nav-accent: #688E26; */
+    --break: 900px;
 
 }
 
@@ -73,16 +74,36 @@ b {
 }
 
 h3 {
-     font-family: "Stack Sans Headline", sans-serif;
+    font-family: "Stack Sans Headline", sans-serif;
     font-weight: 400;
 }
 
+/*** link colors ***/
+main a {
+    color: var(--dark);
+    text-decoration: underline;
+    text-underline-offset: 2px;
 
-main {
-    padding: 0px 24px;
+}
+.brand a, 
+nav a,
+footer a {
+    color: var(--light);
+    text-decoration: none;
+    transition: color 0.15s ease;
 }
 
-@media (min-width: 900px) {
+.brand a:hover,
+nav a:hover,
+footer a:hover {
+    color: var(--nav-accent);
+}
+
+main {
+    padding: 24px;
+}
+
+@media (min-width: 950px) {
     html {
         background-color: var(--light);
     }
