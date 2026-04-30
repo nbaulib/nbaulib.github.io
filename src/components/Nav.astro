@@ -1,5 +1,7 @@
 ---
-
+import { Image } from "astro:assets";
+import github from "/src/assets/github.svg";
+import linkedin from "/src/assets/linkedin.svg";
 ---
 
 <div class="nav">
@@ -42,12 +44,12 @@ hi  .-" , _( )____)
     <ul class="socials">
         <li>
             <a href="https://github.com/nbaulib" target="_blank">
-                <img src="/src/assets/github.svg" alt="GitHub" />
+                 <Image src={github} alt="Github logo" />
             </a>
         </li>
         <li>
             <a href="https://www.linkedin.com/in/nbaulib" target="_blank">
-                <img src="/src/assets/linkedin.svg" alt="LinkedIn" />
+                <Image src={linkedin} alt="Linkedin logo" />
             </a>
         </li>
     </ul>
