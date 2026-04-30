@@ -1,0 +1,63 @@
+---
+title: "solar - greengrl"
+order: 3
+timeline: "Fall 2024"
+role: "Lead Designer"
+collaborators: ["Michelle Lee"]
+tools: ["Figma","Webflow"]
+thumbnail: "../src/assets/greengrl/solar-24.avif"
+desc: "An interactive music visualizer."
+---
+import ImageBlock from "../../components/ImageWide.astro";
+import mockup from "../../assets/greengrl/mockups.png";
+import inspo from "../../assets/greengrl/inspo.png";
+// import demo from "../../assets/greengrl/solar-24.avif";
+
+## Brief
+Up-and-coming musician greengrl requested a teaser experience for their new single *Solar*.
+
+## Moodboard
+<ImageBlock
+  images={[
+    { src: inspo, alt: "collage of visual references" }
+  ]}
+/>
+
+## Wireframe to Mockup
+<ImageBlock
+  images={[
+    { src: mockup, alt: "final mockup" }
+  ]}
+/>
+
+## Code Breakdown
+<iframe
+  src="https://docs.google.com/presentation/d/e/2PACX-1vSVC-ILjvNe3N9Nn1bn-xIDWpxfTDk9phHwI3CXN0k-ayHIOABIy8CnAZbouL55DWi7sBgiWX8L96lM/pubembed?start=false&loop=false&delayms=3000"
+  frameBorder="0"
+  width="800"
+  height="500"
+  allowFullScreen
+/>
+
+## Challenges
+- Some keys did not update color correctly on press  
+  - Fix: refined event handling for consistent state updates  
+
+- Could not achieve desired material look using `metalness()`  
+  - Fix: switched to solid colors  
+
+- Sun wave recoil felt unnatural after key release  
+  - Fix: implemented a separate key release function to control animation reset  
+
+## Things we're proud of 
+- Smooth expanding and collapsing sun-wave interaction  
+- Rotating text  
+- Clipping the audio right   
+
+## Try It 
+
+<iframe src="https://greengrl.stream/solar/"  width="800" height="500"title="Iframe Example"></iframe>
+^desktop only 
+
+- Website: https://greengrl.stream/solar/
+- Repo: https://github.com/greengrl-inc/solar 

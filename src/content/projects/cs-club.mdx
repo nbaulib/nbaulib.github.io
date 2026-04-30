@@ -1,43 +1,60 @@
 ---
 title: "Hunter CS Club Instagram"
+order: 2
 timeline: "Summer 2024 - 2026"
 role: "Lead Designer"
 collaborators: ["Michelle Lee"]
 tools: ["Illustrator","Adobe Express","Canva"]
+thumbnail: "/src/assets/cs-club/hunter-hacks.jpg"
+desc: "Designs for the best club @ Hunter."
 ---
+import ImageBlock from "../../components/ImageTall.astro";
+
+import hunterHacks from "../../assets/cs-club/hunter-hacks.jpg";
+import hackPeople from "../../assets/cs-club/hack-people.jpeg";
+
+import google1 from "../../assets/cs-club/google-tour/1.jpg";
+import google2 from "../../assets/cs-club/google-tour/2.jpg";
+import google3 from "../../assets/cs-club/google-tour/3.jpg";
+
+import kevin from "../../assets/cs-club/kevin.jpg";
+import howto from "../../assets/cs-club/howtosucc.png";
+import bigTech from "../../assets/cs-club/big-tech.jpg";
+import cunyTech from "../../assets/cs-club/cuny-tech-prep.jpg";
 
 ## Overview
-https://www.instagram.com/huntercsclub/
+Joining in 2024, I help shaped our visual identity as the coolest club on campus.
 
-Hunter College Computer Science Club
-
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. 
-
-Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-
-## Club Events
-
-Events focused on getting students exposure to industry
+## HunterHacks
+Hunter’s first annual hackathon.  
 
 <ImageBlock
   images={[
-    { src: "src/assets/kevin.jpg", alt: "poster redesign showing bold typography" },
-    { src: "src/assets/big-tech.jpg", alt: "instagram mockup with updated color system" }, { src: "src/assets/cuny-tech-prep.jpg", alt: "poster redesign showing bold typography" }
+    { src: hunterHacks, alt: "hunterhacks poster" },
+    { src: hackPeople, alt: "hunterhacks " },
   ]}
 />
 
 ## Google Tour
-<ImageBlock
-  images={[
-    { src: "src/assets/google-tour/1.jpg", alt: "poster redesign showing bold typography" },
-    { src: "src/assets/google-tour/2.jpg", alt: "instagram mockup with updated color system" },{ src: "src/assets/google-tour/3.jpg", alt: "instagram mockup with updated color system" }
-  ]}
-/>
-
-## HunterHacks
+Our first office tour! 
 
 <ImageBlock
   images={[
-    { src: "src/assets/hunter-hacks.jpg", alt: "poster redesign showing bold typography" },
+    { src: google1, alt: "google office tour poster" },
+    { src: google2, alt: "google tour instagram post" },
   ]}
 />
+
+## Club Events
+{/* A series of career-focused workshops aimed at increasing student exposure to the tech industry. */}
+Talks centered around industry.
+
+<ImageBlock
+  images={[
+    { src: bigTech, alt: "big tech workshop graphic" },
+    { src: howto, alt: "guest speaker event poster" },
+    { src: cunyTech, alt: "cuny tech prep collaboration poster" }
+  ]}
+/>
+
+**Check out our instagram [here](https://www.instagram.com/huntercsclub/)!**

@@ -1,20 +1,50 @@
 ---
 title: "Hands"
+order: 5
 timeline: "Fall 2024"
 role: "Programmer"
 collaborators: ["Solo Dolo"]
-tools: ["p5.js","ml5.js"]
+tools: ["JavaScript","ml5.js",]
+thumbnail: "src/assets/hands/hands.avif"
+desc: "A gesture-based virtual instrument."
 ---
 
-https://github.com/greengrl-inc/hands
+import ImageBlock from "../../components/ImageWide.astro";
+import wire from "../../assets/hands/inspo.png";
 
 ## Overview
 
-## Inspiration
+## Ideation
 Imogen Heap's Mi.Mu gloves
-https://www.youtube.com/watch?v=ci-yB6EgVW4
+<iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/ci-yB6EgVW4?si=QLT4QCfFVQnH6BHS" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
-Theremin
+- Started off with a terminal-like aesthetic
+- Realized it was too overwhelming for the user
 
-## Next Steps
-Audio Tape
+- A theremin is like the Mi.Mu gloves
+
+<ImageBlock
+  images={[
+    { src: wire, alt: "wireframe" },
+  ]}
+/>
+
+
+<iframe src="https://docs.google.com/presentation/d/e/2PACX-1vSXP3R2ZS7NdIeYEVbBGJZlHvdQ8WpW15fF_tKlJEq-mosEqrpklFUZCrqWSoRTpL2mk_EwI3etAE0I/pubembed?start=false&loop=false&delayms=3000" frameborder="0" width="960" height="569" allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true"></iframe>
+
+## Demo
+<div style="padding:79.98% 0 0 0;position:relative;"><iframe src="https://player.vimeo.com/video/1187220098?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479&amp;loop=1" frameborder="0" allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share" referrerpolicy="strict-origin-when-cross-origin" style="position:absolute;top:0;left:0;width:100%;height:100%;" title="handsdemo"></iframe></div><script src="https://player.vimeo.com/api/player.js"></script>
+
+{/* <iframe 
+  src="https://drive.google.com/file/d/12qTWDvLfbrQOGy_axMj5Cxvxs4O_aj8D/preview" 
+  allow="autoplay"
+  allowfullscreen>
+</iframe> */}
+
+
+## Links
+Repo: https://github.com/greengrl-inc/hands
+
+Try it: https://greengrl.stream/hands/ ^
+
+^ Heavy on CPU

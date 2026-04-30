@@ -1,27 +1,85 @@
 ---
 title: "FaceyBuk"
-timeline: "Fall 2025"
+order: 1
+timeline: "Fall 2025 (48-hours)"
 role: "Lead Designer"
 collaborators: ["Kiera James","Ibrahim Faruquee","Brianna Jules"]
 tools: ["Figma","Node.js","WebRTC", "Socket.IO"]
+thumbnail: "src/assets/nyu-hacks/thumb.png"
+desc: "Maintaining long-distance families through reading."
 ---
 
+import ImageRow from "../../components/ImageWide.astro";
+import matrix from '../../assets/nyu-hacks/matrix.jpg';
+import process from '../../assets/nyu-hacks/process.png';
+import mobileW from '../../assets/nyu-hacks/mobile-wires.png';
+import deskW from '../../assets/nyu-hacks/tabletW.png';
+import pitch from '../../assets/nyu-hacks/pitch.jpg';
+import holding from '../../assets/nyu-hacks/holding.jpg';
 
 ## Overview
-Supporting long distance families through reading.
+A video chatting app that helps long-distance families stay connected through shared reading. 
+Built during HackNYU Fall 2025.
 
-## Problem
-Literacy Rates
+## Problems
+- Many families are separated by immigration, military deployment, or work schedules
+- Declining literacy rates among young children
+- Over-reliance on low-quality screen time
 
-Co-Viewing
+## Guiding Question 
+**How might we make screen time more interactive to support child development and familial bonds?**
 
 ## Research
-Academny 
+- The [American Academy of Pediatrics](https://publications.aap.org/pediatrics/article/138/5/e20162591/60503/Media-and-Young-Minds) discourages screen time for children under 3, with the exception of video calls.
+- [Co-viewing](https://www.healthychildren.org/English/family-life/Media/Pages/why-co-viewing-is-important-tips-to-share-screen-time-with-your-kids.aspx) with prompting increases information processing.
+- 1 in 5 children enter kindergarten with reading skills [three years below their grade level](https://online.regiscollege.edu/blog/child-illiteracy).
 
-## 
+**Conclusion:** Video calls + Reading = Ideal screentime 
 
+## Solution
+**On The Go Storyteller**  
+- Parent and child join a synced reading session  
+- Parent controls story pacing line-by-line  
+- Text updates in real time across both screens  
+- Characters animate and speak using text-to-speech  
+
+This transforms everyday calls into guaranteed learning experiences.
+
+## Process
+<ImageRow
+  images={[
+    { src: matrix, alt: "value cost matrix" },
+    { src: process, alt: "process sketches" },
+  ]}
+/>
+
+<ImageRow
+  images={[
+    { src: mobileW, alt: "mobile wireframes" },
+    { src: deskW, alt: "tablet wireframes" },
+  ]}
+/>
+
+## Demo
+<iframe
+  src="https://cap.so/embed/d25b19ep1dbxc19"
+  frameBorder="0"
+  allowFullScreen
+  width="100%"
+  height="450"
+/>
 
 ## Outcome
-WINNER WINNER CHICKEN DINER
+WINNER WINNER CHICKEN DINNER
+- 1st in Interactive Media Arts
+- Best Use of ElevenLabs
 
-https://devpost.com/software/faceybuk
+<ImageRow
+  images={[
+    { src: pitch, alt: "final pitch" },
+    { src: holding, alt: "team presentation" },
+  ]}
+/>
+
+## Notes
+Interested in the technical side? Read our [Devpost](https://devpost.com/software/faceybuk)!
