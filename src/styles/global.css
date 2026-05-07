@@ -112,3 +112,7 @@ main {
         margin-left: var(--nav-width, 260px);
     }
 }
+
+iframe {
+    max-width: 100%;
+}
